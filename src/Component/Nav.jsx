@@ -1,11 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Nav = () => {
+  // let navigate=useNavigate()
+
+  // let navHome=()=>{
+  //     navigate("/")
+  // }
+
+  
   return (
     <div>
-  <nav id="main-navbar" className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-  <div className="container-fluid">
+  <nav id="main-navbar" className="navbar navbar-expand-lg bg-body-tertiary fixed-top  ">
+  <div className="container-fluid ">
     {/* <a className="navbar-brand" href="#">Navbar</a> */}
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -15,6 +22,7 @@ const Nav = () => {
         <div className="nav-item">
           {/* <a className="nav-link active" aria-current="page" id='Home' href="#">Home</a> */}
           <Link to="/" className="nav-link active" aria-current="page" id='Home'>Home</Link>
+          {/* <h6 className=' nav-link active' onClick={navHome} aria-current="page" id='Home'>Home</h6> */}
           <div className="dropdown-box">
             <ul className='dropdown-list'>
               <li>Work</li>

@@ -3,12 +3,16 @@
     margin: 0;
     box-sizing: border-box;
 }
+.darkviolet{
+  color: darkviolet;
+}
 .nav-item {
   position: relative;
 }
 .nav-link{
   font-weight: 550;
   color: rgba(0, 0, 0, 0.733);
+  cursor: pointer;
   &:hover{
     color: black;
   }
@@ -19,14 +23,22 @@
   top: 100%;
   transform: translateX(-40%);
   flex-wrap: wrap;
-  /* background-color: rgb(161, 17, 17); */
+  background-color:white;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
   width: 350px;
   height: auto;
   z-index: 1000;
-  transition: opacity 0.3s ease;}
+  transition: opacity 0.3s ease;
+}
+.Layout-link.active{
+    background-color: rgb(0, 110, 255);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(0,110,255,0.45);
+    border-color: rgba(0,110,255,0.6);
+  }
 .dropdown-list {
   display: flex;
   flex-wrap: wrap;
@@ -55,15 +67,219 @@
 .dropdown-box:hover {
   display: block;
 }
-
-/* When navbar is fixed-top it sits on top of page content. Add top padding to the page content
-   so routed pages and breadcrumbs are visible below the navbar. Adjust the value if your
-   navbar height changes (e.g. on mobile). */
-.app-content {
-  padding-top: 64px; /* default navbar height; tweak as needed */
+#layout{
+  height: max-content;
+    padding: 20px 10px;
+    /* background-color: rgb(240, 236, 230); */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    position: fixed;
+    gap: 15px;
+    left: 100%;
+    top : 28%;
+    transform: translate(-100%,0%);
+    box-shadow: -1px -1px 3px 1px gainsboro;
+    border-radius: 60px;
+    z-index: 100;
+    overflow: auto;
+  }
+.svg-link{
+  font-size: 25px;
+}
+.Layout-link{
+  height: 35px;
+  width: 40px;
+  background-color: white;
+  border: 2px solid rgba(128, 128, 128, 0.247);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 4px 1px rgb(194, 189, 189);
+  border: none;
+  color: gray;
+  &:hover{
+    background-color: rgb(0, 110, 255);
+    color: white;
+    transform: scale(1.1);
+  }
+}
+#task-connect{
+  position: relative;
+}
+.input-content{
+  display: none;
+  position: absolute;
+  top: 45px;
+  background-color: white;
+  left: 0px;
+  padding: 5px;
+  width: 100%;
+  border-radius: 10px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.form-controls{
+  outline: none;
+  border: none;
+}
+#task-connect:focus-within .input-content,
+#task-connect input:focus ~ .input-content,
+#task-connect:active .input-content,
+.input-content:active {
+  display: block;
+}
+ /* .form-controls:active .input-content{
+  display: block;
+ } */
+.task-list{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: justify;
+}
+.task-list > li{
+  cursor: pointer;
+  font-size: 17px;
+}
+.task-list > li:hover {
+  background-color: #f0f0f0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
 }
 
-/* Ensure the navbar sits above other elements */
-.navbar.fixed-top {
-  z-index: 1030; /* Bootstrap default for fixed navbars */
+#Task-head{
+  background-color: rgb(11, 110, 192); 
 }
+.task-emoji{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.task-emoji-read{
+  font-size: 140px;
+  color: rgba(128, 128, 128, 0.349);
+}
+.form-check-input{
+  color: black;
+}
+  /* #stutas-box{
+    width: 0vw;
+  } */
+/* .Task.container-fluid {
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.Task .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.Task .col-12, .Task .col-sm-6, .Task .col-lg-3 {
+  padding-left: 8px;
+  padding-right: 8px;
+} */
+
+@media (max-width: 768px) {
+  #layout{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    transform: none;
+    width: 100%;
+    /* padding: 10px; */
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.06);
+    background-color: white;
+    z-index: 500;
+    margin-bottom: 25px;
+  }
+  .Layout-link{
+    height: 48px;
+    width: 48px;
+    border-radius: 12px;
+    box-shadow: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .svg-link{ 
+    font-size: 20px; 
+  }
+  .Layout-link.active{
+    background-color: rgb(0, 110, 255);
+    color: white;
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0,110,255,0.18);
+  }
+  .app-content{
+    padding-bottom: 84px; 
+  }
+  #task-status{
+    display: flex;
+    flex-direction: column;
+  }
+  #task-rows-align{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #box-size-status{
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+   #task-status{
+    display: flex;
+    flex-direction: column;
+  }
+  #task-rows-align{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #box-size-status{
+    width: 100%;
+  }
+  
+}
+.icon-big{
+  font-size: 13px;
+}
+.Footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 300;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgb(11, 110, 192);
+  height:2%;
+}
+
+/* .app-content{
+  padding-bottom: 72px;
+} */
