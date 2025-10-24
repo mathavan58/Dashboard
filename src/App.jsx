@@ -37,25 +37,37 @@ const App = () => {
     <div>
       <Router>
         <Nav/>
-        <Layout/>
+        
         <div className="app-content" style={{ paddingTop: navHeight }}>
           <Breadcrumbs />
+          <div className=' layout-page'>
+            <div className='w-100'>
+            <Routes>
+                <Route path='/' element={<Home/>}/>
+                <Route path='/rms' element={<RMS/>}/>
+                <Route path='/spa' element={<SPA/>}/>
+                <Route path='/sales' element={<Sales/>}/>
+                <Route path='/project' element={<Project/>}/>
+                <Route path='/pmes' element={<PMES/>}/>
+                <Route path='/profile' element={<Profile/>}/>
+                <Route path='/leave' element={<Leave/>}/>
+                <Route path='/holiday' element={<Holiday/>}/>
+                <Route path='/calendar' element={<Calendar/>}/>
+                <Route path='/task' element={<Task/>}/>
+                <Route path='/taskstatus' element={<TaskStatus/>}/>
+                <Route path='/attendance' element={<Attendance/>}/>
+              </Routes>
+            </div>
+            <div className='p-2 layout-container'>
+                          <Layout/>
+
+            </div>
+            
+          </div>
+          
+          
           <Footer/>
-          <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/rms' element={<RMS/>}/>
-            <Route path='/spa' element={<SPA/>}/>
-            <Route path='/sales' element={<Sales/>}/>
-            <Route path='/project' element={<Project/>}/>
-            <Route path='/pmes' element={<PMES/>}/>
-            <Route path='/profile' element={<Profile/>}/>
-            <Route path='/leave' element={<Leave/>}/>
-            <Route path='/holiday' element={<Holiday/>}/>
-            <Route path='/calendar' element={<Calendar/>}/>
-            <Route path='/task' element={<Task/>}/>
-            <Route path='/taskstatus' element={<TaskStatus/>}/>
-            <Route path='/attendance' element={<Attendance/>}/>
-          </Routes>
+          
         </div>
       </Router>
     </div>
