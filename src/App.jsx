@@ -13,12 +13,12 @@ import PMES from './Component/PMES'
 import Profile from './Component/Profile'
 import Leave from './Component/Leave'
 import Holiday from './Component/Holiday'
-import Calendar from './Component/Calendar'
 import Task from './Component/Task'
 import Attendance from './Component/Attendance'
 import Footer from './Component/Footer'
 import Layout from './Component/Layout'
 import TaskStatus from './Component/TaskStatus'
+import CalendarPage from './Component/CalendarPage'
 
 const App = () => {
   const [navHeight, setNavHeight] = useState(64)
@@ -33,8 +33,8 @@ const App = () => {
     return () => window.removeEventListener('resize', measure)
   }, [])
   return (
-    
-    <div>
+
+    <div >
       <Router>
         <Nav/>
         
@@ -52,7 +52,7 @@ const App = () => {
                 <Route path='/profile' element={<Profile/>}/>
                 <Route path='/leave' element={<Leave/>}/>
                 <Route path='/holiday' element={<Holiday/>}/>
-                <Route path='/calendar' element={<Calendar/>}/>
+                <Route path='/calendar' element={<CalendarPage/>}/>
                 <Route path='/task' element={<Task/>}/>
                 <Route path='/taskstatus' element={<TaskStatus/>}/>
                 <Route path='/attendance' element={<Attendance/>}/>
@@ -60,14 +60,9 @@ const App = () => {
             </div>
             <div className='p-2 layout-container'>
                           <Layout/>
-
             </div>
-            
           </div>
-          
-          
           <Footer/>
-          
         </div>
       </Router>
     </div>

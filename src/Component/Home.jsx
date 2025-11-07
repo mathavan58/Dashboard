@@ -9,7 +9,7 @@ import { FaChalkboardUser } from "react-icons/fa6";
 import { FaUsersCog } from "react-icons/fa";
 import { useNavigate, useParams } from 'react-router-dom';``
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-
+import CalendarPage from './CalendarPage';
 
 const item = [
   {date:"13/10/2025",checkIn:8,checkOut:17},
@@ -17,6 +17,8 @@ const item = [
 ]
 
 const Home = () => {
+
+
 
   let navigate=useNavigate()
 
@@ -60,9 +62,9 @@ const Home = () => {
   return (
   
         <div className="container-fluid px-4 py-3 home-box">
-          <div className="row">
+          <div className="row ">
             
-                <div className="col-12 col-sm-12 col-lg-3 mb-3 dove">
+                <div className="col-12 col-sm-12 col-lg-3 mb-3 dove h-100">
                   <div className="profile-box p-3 rounded-4 ">
                     <h5 className='pb-2 d-flex gap-2'><span><AiFillThunderbolt className='svg-color'/></span>Quick Access</h5>
                     <div className="profile-box-section d-flex gap-3">
@@ -94,7 +96,7 @@ const Home = () => {
                   </div>
                 </div>
      
-                <div className="col-12 col-sm-12 col-lg-4 mb-3 dove">
+                <div className="col-12 col-sm-12 col-lg-4 mb-3 dove pe-0">
                     <div className="row task-box ">
                       <div className="row ps-3 p-0">
                         <div className="col col-12 col-sm-12 col-lg-3 w-100 p-0 h-100">
@@ -117,21 +119,21 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-                        <div className="row ps-3  p-0">
+                        <div className="row ps-3 p-0">
                         <div className="col col-12 col-sm-12 col-lg-3 w-100 p-0 h-100">
                           <div className="Task-box-head w-100 p-3 rounded-4 ">
                             <h5 className='pb-2'>Leave</h5>
                             <div className="task-box-section d-flex gap-3 w-100 text-white">
                               <div className="col col-lg-4 task-color-box-four d-flex p-2 rounded-4">
-                                <h6 className='fs-5 pt-2'>24</h6>
+                                <h6 className='fs-5 pt-2'>0</h6>
                                 <p className='m-0'>Total Leave</p>
                               </div>
                               <div className="col col-lg-4 task-color-box-five  d-flex p-2 rounded-4">
-                                <h6 className='fs-5 pt-2'>17.5</h6>
+                                <h6 className='fs-5 pt-2'>0</h6>
                                 <p className='m-0'>Balance Leave</p>
                               </div>
                               <div className="col col-lg-4 task-color-box-six d-flex p-2 rounded-4">
-                                <h6 className='fs-5 pt-2' >6.5</h6>
+                                <h6 className='fs-5 pt-2' >0</h6>
                                 <p className='m-0'>Leave Taken</p>
                               </div>
                             </div>
@@ -164,7 +166,7 @@ const Home = () => {
                     </div>
                 </div>
                           
-                <div className="col-12 col-sm-12 col-lg-5 mb-3 dove">
+                <div className="col-12 col-sm-12 col-lg-5 dove">
                   <div className='attendance  p-3 pb-1 rounded-4'>
       <div className="head-three d-flex justify-content-between pb-2">
         <div className="one">
@@ -194,9 +196,11 @@ const Home = () => {
     </ResponsiveContainer>
       </div>
           </div>
-             <div className="row p-3">
+
+          
+             <div className="row  m-0 p-0">
                 <div className="col-12 col-sm-12 col-lg-3 mb-3 dove">
-                  <div className="holiday-box p-3 rounded-4">
+                  <div className="holiday-box p-3 rounded-4 w-100 ">
                     <h5 className='pb-2'>Upcoming holidays</h5>
                         <div className="holiday-content gap-2 d-flex">
                              <div className="holiday-box-one d-flex">
@@ -224,19 +228,19 @@ const Home = () => {
                         </div>
                 </div>
                 </div>
-                <div className="col-12 col-sm-12 col-lg-4 mb-3 dove">
+                <div className="col-12 col-sm-12 col-lg-4 mb-3 dove p-0">
                         <div className="leave-box d-flex justify-content-between w-100 gap-3">
                           <div className="recent-leave p-3 rounded-4 w-100 overflow-auto">
                                <h5 className='pb-2'>My Recent Leaves</h5>
-
                           </div>
                           <div className="emp-leave p-3 rounded-4 w-100 overflow-auto">
                                <h5 className='pb-2'>Emp Leaves</h5>
-
                           </div>
                         </div>
                 </div>
-                <div className="col-12 col-sm-12 col-lg-5 mb-3 dove">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, quo ut beatae quas iure exercitationem saepe repudiandae error eos eaque cupiditate placeat? Ipsa consequuntur neque porro minima voluptatibus deserunt unde molestiae in voluptatem. Dolor minus autem perspiciatis exercitationem. Perferendis ad sint, cum beatae quisquam nulla necessitatibus maiores quam repellendus odit.</div>
+                <div className="col-12 col-sm-12 col-lg-5 mb-3 dove">
+                  <CalendarPage/>
+                </div>
           </div>
           </div>
         </div>

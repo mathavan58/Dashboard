@@ -2,12 +2,17 @@ import React, { useState } from 'react'
 import { IoIosArrowDown } from "react-icons/io"
 import { BsFillExclamationCircleFill } from "react-icons/bs"
 import { FaBookReader } from "react-icons/fa"
+import { useNavigate } from 'react-router-dom'
 
 const Task = () => {
+  let navigate=useNavigate()
   const [radio, setRadio] = useState(false)
 
   const handleError = () => {
     setRadio(prev => !prev)
+    setTimeout(() => {
+      navigate('/taskstatus')
+    }, 150);
   }
   
   return (
